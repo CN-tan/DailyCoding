@@ -29,7 +29,10 @@ location ~    #大小写敏感
 
 > 例子: 现在有一个query: /image/delete location如下 
 >
-> `location = /image location = /image/delete`
+> 1. `location = /image` 
+> 2. `location = /image/dele`
+>
+> 本次查询会跑到第二个location下
 
 然后开始按顺序检查正则表达式. 若能匹配,则query会跑到第一个能用正则匹配的location下; 若不能匹配,则使用上一步字符串匹配的结果.
 
@@ -41,9 +44,11 @@ location ~    #大小写敏感
 
 2. **使用前缀"^~"**
 
-   带有这个的location
+   带有这个的location若能被匹配到,则将忽略之后的正则匹配.
 
   ---
+
+
 
 
 
