@@ -27,7 +27,9 @@ location ~    #大小写敏感
 
 在决定一个具体的query的去向\(跟哪条location指令相匹配\)时,nginx首先会检查字符串匹配,找到前缀匹配最多的那个.
 
-> 例子: 现在有一个query: /image/delete location如下 `location = /image location = /image/delete`
+> 例子: 现在有一个query: /image/delete location如下 
+>
+> `location = /image location = /image/delete`
 
 然后开始按顺序检查正则表达式. 若能匹配,则query会跑到第一个能用正则匹配的location下; 若不能匹配,则使用上一步字符串匹配的结果.
 
@@ -40,6 +42,10 @@ location ~    #大小写敏感
 2. **使用前缀"^~"**
 
    带有这个的location
+
+  ---
+
+
 
 
 
